@@ -1,0 +1,142 @@
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
+  --color-ring: #0d9488;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-chart-1: #0d9488;
+  --color-chart-2: #22c55e;
+  --color-chart-3: #f97316;
+  --color-chart-4: #eab308;
+  --color-chart-5: #ef4444;
+
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #4b5563;
+  --color-sidebar-primary: #0d9488;
+  --color-sidebar-accent-foreground: #0d9488;
+  --color-sidebar-border: #e5e7eb;
+  --color-sidebar-ring: #0d9488;
+
+  --color-brand-primary: #0d9488;
+  --color-brand-light: #f0fdfa;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-tertiary: #6b7280;
+  --color-status-critical: #ef4444;
+  --color-status-warning: #f97316;
+  --color-status-pending: #eab308;
+  --color-status-success: #22c55e;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+    border-color: #e5e7eb;
+  }
+
+  :root {
+    --background: #f9fafb;
+    --destructive-foreground: #ffffff;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #0d9488;
+    --chart-1: #0d9488;
+    --chart-2: #22c55e;
+    --chart-3: #f97316;
+    --chart-4: #eab308;
+    --chart-5: #ef4444;
+    --radius: 0.5rem;
+    --sidebar-background: #ffffff;
+    --sidebar-foreground: #4b5563;
+    --sidebar-primary: #0d9488;
+    --sidebar-accent-foreground: #0d9488;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #0d9488;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.025em;
+    line-height: 2rem;
+    color: var(--color-text-primary);
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    color: var(--color-text-primary);
+  }
+
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    .container {
+      max-width: 1400px;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  .font-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  .text-small {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .sidebar-active-link {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+    border-right: 2px solid var(--color-primary);
