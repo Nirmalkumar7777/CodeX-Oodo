@@ -1,0 +1,106 @@
+import React from 'react';
+import Image from 'next/image';
+
+const Sidebar = () => {
+  const navItems = [
+    {
+      label: 'Dashboard',
+      icon: 'ri-dashboard-line',
+      href: '/',
+      active: true,
+    },
+    {
+      label: 'Equipment',
+      icon: 'ri-tools-line',
+      href: '/equipment',
+      active: false,
+    },
+    {
+      label: 'Maintenance Teams',
+      icon: 'ri-team-line',
+      href: '/teams',
+      active: false,
+    },
+    {
+      label: 'Requests',
+      icon: 'ri-file-list-3-line',
+      href: '/requests',
+      active: false,
+    },
+    {
+      label: 'Calendar',
+      icon: 'ri-calendar-line',
+      href: '/calendar',
+      active: false,
+    },
+    {
+      label: 'Reports',
+      icon: 'ri-bar-chart-line',
+      href: '/reports',
+      active: false,
+    },
+  ];
+
+  return (
+    <aside className="w-64 bg-white shadow-sm border-r border-[#e5e7eb] h-screen fixed left-0 top-0 z-50">
+      {/* Brand Logo Section */}
+      <div className="p-6">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-[#0d9488] rounded-lg flex items-center justify-center">
+            <i className="ri-tools-fill text-white text-xl"></i>
+          </div>
+          <div>
+            <h1 className="text-xl font-bold text-[#111827] leading-tight">GearGuard</h1>
+            <p className="text-sm text-[#6b7280]">Maintenance Tracker</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Menu */}
+      <nav className="px-4 mt-2 space-y-1">
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
+              item.active
+                ? 'bg-[#f0fdfa] text-[#0f766e] border-r-2 border-[#0d9488]'
+                : 'text-[#4b5563] hover:bg-[#f9fafb]'
+            }`}
+          >
+            <i className={`${item.icon} mr-3 text-lg ${item.active ? 'text-[#0f766e]' : 'text-[#4b5563]'}`}></i>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Bottom User Profile Card */}
+      <div className="absolute bottom-6 left-4 right-4">
+        <div className="bg-[#f9fafb] rounded-lg p-4">
+          <div className="flex items-center space-x-3">
+            <div className="relative w-10 h-10 flex-shrink-0">
+              <Image
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/8bbec636-031f-4075-88fc-a9f42d4b318f-yqnnys-readdy-co/assets/icons/a0e2793208819875298f4a213eb4b6a8-1.jpg"
+                alt="Admin Avatar"
+                fill
+                className="rounded-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden">
+              <p className="text-sm font-medium text-[#111827] truncate">Admin User</p>
+              <p className="text-xs text-[#6b7280] truncate">Maintenance Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Remix Icon Import - Assuming it's needed if not in globals.css */}
+      <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    </aside>
+  );
+};
+
+export default Sidebar;
